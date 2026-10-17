@@ -2,16 +2,20 @@
 
 Pyxel製のブラックコメディ装置パズル。架空の極悪人を、ピタゴラ装置で「より苦しく」処刑するほど高得点。
 
-## 起動
+## 遊ぶ
+スマホ・PCのブラウザで: https://jirodasu.github.io/karakuri-kyokei-show/
+（画面をタップすると起動）
+
+## ローカルで起動
 ```
 pip install pyxel
 python karakuri_kyokei.py
 ```
 
 ## 操作
-- 左クリック: パーツ配置 / 撤去（右クリックでも撤去）
-- SPACE または START: 実行（鉄球3発）
-- R: 編集に戻る
+- クリック / タップ: パーツ配置・撤去
+- START（SPACE）: 実行（鉄球3発）
+- BACK（R）: 編集に戻る
 
 ## パーツ
 | パーツ | 効果 |

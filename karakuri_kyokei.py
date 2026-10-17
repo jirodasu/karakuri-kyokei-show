@@ -1,5 +1,5 @@
 # からくり極刑ショー  -  Pyxel prototype (stage 1)
-# 操作: 左クリック=配置/撤去  右クリック=撤去  SPACE=開始  R=編集に戻る
+# 操作: クリック/タップ=配置・撤去  START(SPACE)=開始  BACK(R)=編集に戻る
 import random
 import pyxel
 
@@ -311,7 +311,8 @@ class Game:
         self.mode = "result"
 
     def update_run(self):
-        if pyxel.btnp(pyxel.KEY_R):
+        if pyxel.btnp(pyxel.KEY_R) or (pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT)
+                                       and pyxel.mouse_x >= 196 and pyxel.mouse_y >= 186):
             self.mode = "edit"
             return
         self.frame += 1
@@ -446,7 +447,8 @@ class Game:
             pyxel.text(4, 184, "AGONY %d  COMBO %d  TIME %d" % (self.agony_steps, self.combo,
                                                               MAX_STEPS - self.steps), 7)
             pyxel.text(130, 174, "BALL %d" % (self.balls_left + (1 if self.ball else 0)), 13)
-            pyxel.text(160, 192, "R: back to edit", 5)
+            pyxel.rect(196, 186, 40, 12, 5)
+            pyxel.text(206, 189, "BACK", 7)
         else:
             for i, (p, name, _) in enumerate(PARTS):
                 px = 4 + i * 32
